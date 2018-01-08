@@ -8,8 +8,8 @@
     "angular",
     "module"
   ],
-  "homepage": "https://github.com/DaftMonk/angular-tour",
-  "bugs": "https://github.com/DaftMonk/angular-tour/issues",
+  "homepage": "https://github.com/davewaldrum/angular-tour",
+  "bugs": "https://github.com/davewaldrum/angular-tour/issues",
   "author": {
     "name": "Tyler Henkel",
     "email": "",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/DaftMonk/angular-tour.git"
+    "url": "https://github.com/davewaldrum/angular-tour.git"
   },
   "main": [
     "./dist/angular-tour-tpls.min.js",
