@@ -1,6 +1,6 @@
 /**
  * An AngularJS directive for showcasing features of your website
- * @version v0.2.5 - 2015-12-10
+ * @version v0.2.5 - 2018-01-08
  * @link https://github.com/DaftMonk/angular-tour
  * @author Tyler Henkel
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -257,7 +257,7 @@
             if (container && container[0]) {
               top = top - container[0].getBoundingClientRect().top + container[0].scrollTop;
               // if container is fixed, position tour tip relative to fixed container
-              if (container.css('position') === 'fixed') {
+              if (container.css('position') === 'fixed' || container.css('position') === 'absolute') {
                 containerLeft = container[0].getBoundingClientRect().left;
               }
               // restrict right position if the tourtip doesn't fit in the container
@@ -284,6 +284,13 @@
                 left: _left > 0 ? _left : minimumLeft
               };
               break;
+            case 'right-bottom':
+              var _left = position.right - containerLeft - ttWidth - scope.offsetHorizontal;
+              ttPosition = {
+                top: top + position.height + scope.ttMargin + scope.offsetVertical,
+                left: _left > 0 ? _left : minimumLeft
+              };
+              break;
             case 'center':
               var _left = position.left - containerLeft + 0.5 * (position.width - ttWidth) + scope.offsetHorizontal;
               ttPosition = {
@@ -295,6 +302,13 @@
               var _left = position.left - containerLeft + 0.5 * (position.width - ttWidth) + scope.offsetHorizontal;
               ttPosition = {
                 top: top + 0.1 * (position.height - ttHeight) + scope.ttMargin + scope.offsetVertical,
+                left: _left > 0 ? _left : minimumLeft
+              };
+              break;
+            case 'right-top':
+              var _left = position.right - containerLeft - ttWidth - scope.offsetHorizontal;
+              ttPosition = {
+                top: top - ttHeight - scope.ttMargin + scope.offsetVertical,
                 left: _left > 0 ? _left : minimumLeft
               };
               break;
